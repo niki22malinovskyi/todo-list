@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" title="theme" href="#">
+</head>
+
+<body>
+
+    <div class="block">
+        <h1 class="block__title">Привіт</h1>
+        <p class="block__pre-title">Додай задачі та відслідковуй власний прогрес</p>
+        <div class="block__todo">
+            <label for="title"><input class="todo__input input__title" id="title" type="text"
+                    placeholder="Додати нову задачу"></label>
+            <label for="text"><textarea class="todo__input input__text" id="text" type="text"
+                    placeholder="Додаткова інформація до цієї задачі"></textarea></label>
+            <button class="todo__btn button__animation">Додати задачу</button>
+        </div>
+        <ul class="todo__table">
+        </ul>
+    </div>
+
+
+
+    <script src="js/function.js"></script>
+</body>
+
+</html>

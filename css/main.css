@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #E8E8E8;
+}
+
+textarea {
+    resize: none;
+}
+
+.todo__input {
+    height: 50px;
+}
+
+.input__title, .title {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+
+}
+
+.input__text, .text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17px;
+}
+
+.block {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+.block__todo {
+    padding-left: 50px;
+}
+
+.block__title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 34px;
+    color: #141414;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.block__title::after {
+    content: '';
+    position: absolute;
+    background-image: url(../img/waving-hand-sign.svg);
+    width: 36px;
+    height: 36px;
+    left: 50%;
+    top: -50px;
+    transform: translate(-50%, 0);
+}
+
+.block__pre-title {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #7B7B7B;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.block__todo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.warn {
+    border-bottom: 2px solid red;
+    animation: snake 300ms;
+}
+
+@keyframes snake {
+    25% {
+        transform: translateX(4px);
+    }
+
+    50% {
+        transform: translateX(-4px);
+    }
+
+    75% {
+        transform: translateX(4px);
+    }
+
+}
+
+.block__todo label {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.block__todo input,
+.block__todo textarea {
+    background-color: #E8E8E8;
+}
+
+input,
+textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .5s ease;
+}
+
+textarea {
+    resize: none;
+}
+
+input:focus {
+    border-bottom: 2px solid rgb(193, 187, 187);
+}
+
+textarea:focus {
+    border-bottom: 2px solid rgb(193, 187, 187);
+}
+
+.todo__btn {
+    margin-left: auto;
+    padding: 5px 15px;
+    height: 35px;
+    font-weight: 400;
+    border: transparent;
+    background-color: #095FFB;
+    cursor: pointer;
+    transition: background-color .5s ease;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.todo__btn:hover {
+    background-color: #0947ba;
+}
+
+.button__animation {
+    position: relative;
+    overflow: hidden;
+}
+
+.button__animation:before {
+    content: '';
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    filter: blur;
+    background: linear-gradient(to left, transparent 0%, #fff 40%, #fff 60%, transparent 100%);
+    transform: translate(-100%, -25%) rotate(10deg);
+    animation: blick 5s infinite;
+}
+
+@keyframes blick {
+    0% {
+        transform: translate(-100%, -25%) rotate(10deg);
+    }
+
+    20% {
+        transform: translate(100%, -25%) rotate(10deg);
+    }
+
+    100% {
+        transform: translate(100%, -25%) rotate(10deg);
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+.todo__table__list {
+    position: relative;
+    padding: 20px 20px 20px 50px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 10px #EEEEEE;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.todo__table__list input,
+.todo__table__list textarea,
+.todo__table__list .todo__text-btn {
+    background-color: #fff;
+}
+
+.checkbox {
+    position: relative;
+
+}
+
+.checkbox__input {
+    display: none;
+}
+
+.checkbox__inner {
+    position: absolute;
+    left: -35px;
+    top: 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #DDDDDD;
+    background: transparent no-repeat center;
+}
+
+.checkbox__input:checked+.checkbox__inner {
+    border-color: #095FFB;
+    background-color: #095FFB;
+    background-image: url(../img/Union.svg);
+}
+
+.btn img {
+    pointer-events: none;
+    background-color: #fff;
+}
+
+.btn {
+    background-color: #fff;
+    outline: none;
+    border: transparent;
+    margin-left: 15px;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .5s ease;
+}
+
+.btn:hover {
+    opacity: 0.6;
+}
+
+.todo__text-btn {
+    display: flex;
+    justify-content: end;
+}
+
+.title {
+    color: #141414;
+
+}
+
+.text {
+    color: #7B7B7B;
+}
+
+.todo__text {
+    margin-bottom: 10px;
+}
+
+.todo__table__list.important,
+.todo__table__list.important input,
+.todo__table__list.important textarea,
+.todo__table__list.important .todo__text-btn,
+.todo__table__list.important .btn img,
+.todo__table__list.important .btn {
+    background-color: #EB5757;
+}
+
+.todo__table__list.important .checkbox__inner {
+    border-color: #FFFFFF;
+}
+
+.todo__table__list.important .checkbox__input:checked+.checkbox__inner {
+    border-color: #095FFB;
+}
+
+.todo__table__list.important input,
+.todo__table__list.important textarea {
+    color: #fff;
+}
+
+.title.checked {
+    text-decoration: line-through;
+}
+
+
+
+@media screen and (min-width: 960px) {
+    .block__title{text-align: left; font-size: 32px; line-height: 45px;}
+    .block__title::after{top: 0;left: 120px;transform: translate(0,0);}
+    .block__pre-title{font-size: 16px;font-weight: 400;line-height: 22px;text-align: left;}
+    .block__todo{padding-left: 65px;}
+    .input__title, .title {font-size: 21px;font-weight: 400;line-height: 29px;}
+    .input__text, .text {font-size: 16px; font-weight: 400; line-height: 22px;}
+    .todo__table__list {padding: 25px 25px 25px 65px;}
+    .checkbox__inner {width: 24px; height: 24px;}
+}
